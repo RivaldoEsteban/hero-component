@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+}
+
+.hero-container {
+}
+
+.wrapper {
+  max-width: 1366px;
+  margin: auto;
+}
