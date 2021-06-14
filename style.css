@@ -1,11 +1,161 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: green;
 }
 
 .hero-container {
+  width: 100vw;
+  height: 100vh;
 }
 
 .wrapper {
-  max-width: 1366px;
   margin: auto;
+  height: inherit;
+}
+
+.hero {
+  position: relative;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero-background img {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  color: white;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto 83px;
+  /* height: inherit; */
+}
+
+.hero-clip-path {
+  height: inherit;
+  display: flex;
+  width: 960px;
+  clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
+  background-image: url(images/background-black.png);
+}
+
+.hero-content h1 {
+  font: 700 normal 40px/45px arial;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.hero-content p {
+  font: 400 normal 1rem/1.5rem arial;
+  margin: 0 0 1.5rem 0;
+}
+
+.hero-content button {
+  color: white;
+  padding: 1rem 2rem;
+  background: #1b90fc;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  transform: scale(1);
+}
+
+.hero-content button:active {
+  transform: scale(0.99);
+}
+
+.hero-clip-path-button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  clip-path: polygon(0% 100%, 100% 0%, 100% 100%, 0% 100%);
+  background: white;
+  z-index: 10;
+}
+
+.hero-txt {
+  width: inherit;
+  position: relative;
+  height: inherit;
+}
+
+@media (max-width: 1600px) {
+  .hero-clip-path {
+    width: 750px;
+  }
+}
+@media (max-width: 1300px) {
+  .hero-clip-path {
+    width: 700px;
+  }
+}
+@media (max-width: 1200px) {
+  .hero-clip-path {
+    width: 600px;
+  }
+}
+
+@media (max-width: 950px) {
+  .hero-background img {
+    position: unset;
+    height: 484px;
+    background-size: cover;
+    display: flex;
+    flex: 1;
+  }
+  .hero-clip-path {
+    clip-path: unset;
+    width: 100vw;
+    align-items: center;
+  }
+  .hero-content {
+    margin: 40px 64px 121px;
+    display: block;
+    max-width: 100%;
+  }
+  .hero-content button {
+    width: 100%;
+  }
+  .hero-txt {
+    display: flex;
+    flex: 1;
+    height: initial;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-background img {
+    height: 384px;
+  }
+  .hero-content {
+    margin: 40px 40px 121px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-background img {
+    height: 274px;
+  }
+  .hero-content {
+    margin: 40px 24px 121px;
+  }
 }
