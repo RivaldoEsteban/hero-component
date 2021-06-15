@@ -174,4 +174,10 @@ body {
   .hero-content {
     margin: 40px 24px 121px;
   }
+  .hero-content h1 {
+    font: 700 normal 1.5rem/28px arial;
+  }
+  .hero-content p {
+    font: 400 normal 14px/24px arial;
+  }
 }
