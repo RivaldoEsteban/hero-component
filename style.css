@@ -10,33 +10,34 @@ body {
 
 .hero-container {
   width: 100vw;
-  height: 100vh;
+  height: 560px;
+  position: relative;
+  background: #202020;
 }
 
 .wrapper {
+  max-width: 1366px;
   margin: auto;
   height: inherit;
 }
 
 .hero {
-  position: relative;
   background-size: cover;
   display: flex;
   flex-direction: column;
   height: inherit;
-  width: 100vw;
-  height: 100vh;
 }
 
-.hero-background img {
+.hero-background {
+  background-image: url(images/loki.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: inherit;
+  width: calc(50% + 100px);
   position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  bottom: 0;
-  left: 0;
+  /* z-index: 5; */
   right: 0;
-  box-sizing: border-box;
 }
 
 .hero-content {
@@ -47,15 +48,14 @@ body {
   justify-content: center;
   align-items: flex-start;
   margin: auto 83px;
-  /* height: inherit; */
 }
 
 .hero-clip-path {
   height: inherit;
   display: flex;
-  width: 960px;
-  clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
-  background-image: url(images/background-black.png);
+  width: 50%;
+  clip-path: polygon(0% 0%, calc(100% - 100px) 0%, 100% 100%, 0 100%);
+  background: #202020;
 }
 
 .hero-content h1 {
@@ -71,11 +71,11 @@ body {
 .hero-content button {
   color: white;
   padding: 1rem 2rem;
-  background: #1b90fc;
+  background: rgb(56, 56, 243);
   border: none;
   cursor: pointer;
-  border-radius: 30px;
   transform: scale(1);
+  clip-path: polygon(0% 20%, 20% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%);
 }
 
 .hero-content button:active {
@@ -87,7 +87,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 100px;
-  clip-path: polygon(0% 100%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 100%, 100% 0%, 100% 100%, 0 100%);
   background: white;
   z-index: 10;
 }
@@ -98,61 +98,77 @@ body {
   height: inherit;
 }
 
-@media (max-width: 1600px) {
-  .hero-clip-path {
-    width: 750px;
-  }
-}
-@media (max-width: 1300px) {
-  .hero-clip-path {
-    width: 700px;
-  }
-}
-@media (max-width: 1200px) {
-  .hero-clip-path {
-    width: 600px;
-  }
-}
+/*  */
 
 @media (max-width: 950px) {
-  .hero-background img {
-    position: unset;
-    height: 484px;
-    background-size: cover;
-    display: flex;
-    flex: 1;
+  body {
+    display: block;
+    position: relative;
   }
+  .wrapper {
+    height: auto;
+  }
+
+  .hero-container {
+    height: auto;
+    position: unset;
+  }
+
+  .hero-background {
+    position: unset;
+    width: 100%;
+    height: 584px;
+    /* display: flex; */
+    /* flex: 1; */
+  }
+
   .hero-clip-path {
     clip-path: unset;
-    width: 100vw;
-    align-items: center;
-  }
-  .hero-content {
-    margin: 40px 64px 121px;
+    width: 100%;
     display: block;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-content {
     max-width: 100%;
+    margin: 40px 64px;
   }
   .hero-content button {
     width: 100%;
   }
-  .hero-txt {
-    display: flex;
-    flex: 1;
-    height: initial;
+  .hero-clip-path-button {
+    position: unset;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-background {
+    height: 500px;
+  }
+}
+@media (max-width: 700px) {
+  .hero-background {
+    height: 474px;
   }
 }
 
 @media (max-width: 600px) {
-  .hero-background img {
-    height: 384px;
+  .hero-background {
+    height: 374px;
   }
-  .hero-content {
-    margin: 40px 40px 121px;
+  .hero-container {
+    height: 100%;
+    position: relative;
+  }
+  .hero-clip-path-button {
+    position: absolute;
   }
 }
 
 @media (max-width: 500px) {
-  .hero-background img {
+  .hero-background {
     height: 274px;
   }
   .hero-content {
