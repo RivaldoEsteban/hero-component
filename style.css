@@ -164,6 +164,7 @@ body {
   }
   .hero-clip-path-button {
     position: absolute;
+    display: none;
   }
 }
 
